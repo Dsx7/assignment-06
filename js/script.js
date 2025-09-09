@@ -17,27 +17,29 @@ const showCategories =(categories)=> {
 
     categories.forEach(element => {
         categoriesContainer.innerHTML += `<li>
-                <a class="px-4 py-2 duration-300 hover:bg-green-500 hover:text-white rounded-lg block" href="">${element.category_name}</a>
+                <a onclick="getSingleCategoryAPI(${element.id})" class="px-4 py-2 duration-300 hover:bg-green-500 hover:text-white rounded-lg block">${element.category_name}</a>
               </li>
         `
     });
 }
 
 
-// Get All Plants 
+// Get Plants 
 const getPlants =(url)=> {
-    console.log(url)
+    // console.log(url)
     fetch(url)
     .then(response => response.json())
     .then(data => showPlants(data.plants))
     
 }
+// Get All Plants From The APIs
 const getAllPlantsAPI =()=> {
     const url = "https://openapi.programming-hero.com/api/plants"
     getPlants(url)
 }
 getAllPlantsAPI()
 
+// Shows Plants
 const showPlants =(plants)=>{
     const plantsContainer = getElement("plants_container")
     plantsContainer.innerHTML = ""
@@ -58,4 +60,10 @@ const showPlants =(plants)=>{
               </div>
         `
     })
+}
+
+// get single plants from API
+const getSingleCategoryAPI =(id) => {
+        const url = `https://openapi.programming-hero.com/api/category/${id}`
+        getPlants(url)
 }
