@@ -17,7 +17,7 @@ const showCategories =(categories)=> {
 
     categories.forEach(element => {
         categoriesContainer.innerHTML += `<li>
-                <a onclick="getSingleCategoryAPI(${element.id})" class="px-4 py-2 duration-300 hover:bg-green-500 hover:text-white rounded-lg block">${element.category_name}</a>
+                <a id="btn-${element.id}" onclick="getSingleCategoryAPI(${element.id})" class="ctg-btn px-4 py-2 duration-300 hover:bg-green-500 hover:text-white rounded-lg block">${element.category_name}</a>
               </li>
         `
     });
@@ -66,4 +66,15 @@ const showPlants =(plants)=>{
 const getSingleCategoryAPI =(id) => {
         const url = `https://openapi.programming-hero.com/api/category/${id}`
         getPlants(url)
+        isActive(id)
+}
+
+// Active Button
+const isActive =(id) =>{
+    // console.log(id)
+    const allBtn = document.querySelectorAll(".ctg-btn")
+    allBtn.forEach(element => {
+        element.classList.remove("text-white", "bg-green-500")
+    });
+    getElement(`btn-${id}`).classList.add("text-white", "bg-green-500")
 }
