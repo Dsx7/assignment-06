@@ -32,7 +32,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
                     </div>
-                    <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <ul tabindex="0" class="menu menu-sm dropdown-content bg-green-600 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li><a>About</a></li>
                         <li><a>Gallery</a></li>
                         <li><a>Plant a Tree</a></li>
@@ -55,17 +55,17 @@
         </div>
     </nav>
     <main>
-        <section class="bg-green-100 ">
+        <section class="bg-green-100 py-10 md:py-0">
             <div class="max-w-[1650px] mx-auto px-4">
-                <div class="flex justify-between items-center">
-                    <img class="w-3/12" src="./assets/hero-leaf1.png" alt="">
+                <div class="flex justify-between items-center flex-col md:flex-row">
+                    <img class="w-3/12 hidden md:block" src="./assets/hero-leaf1.png" alt="">
                     <div class="w-6/12 text-center space-y-3">
-                        <h1 class="text-3xl font-bold text-center">Plant a Tree, Grow a Future</h1>
+                        <h1 class="text-3xl  sm:text-4xl md:text-5xl font-bold text-center">Plant a Tree, Grow a Future</h1>
                         <p class="text-center text-[16px] text-black/50">Join our mission to plant 1 million trees and make the Earth greener for future generations.
                         </p>
                         <button class=" text-green-600 bg-yellow-500 px-6 py-2.5 rounded-full cursor-pointer">Get Involved</button>
                     </div>
-                    <img class="w-3/12" src="./assets/hero-leaf2.png" alt="">
+                    <img class="w-3/12 hidden md:block" src="./assets/hero-leaf2.png" alt="">
                 </div>
 
             </div>
@@ -75,18 +75,18 @@
                 <div>
                     <h3 class="text-center font-bold text-2xl mb-5">Choose Your Trees</h3>
                 </div>
-                <div class="justify-between flex gap-7">
-                    <div class="w-2/12">
+                <div class="justify-between flex gap-7 flex-col md:flex-row">
+                    <div class="md:w-2/12">
                         <h4 class="text-xl font-bold mb-2">Categories</h4>
                         <ul id="categories-container">
                         </ul>
                     </div>
-                    <div class="w-8/12">
+                    <div class="md:w-8/12">
                         <div id="loading" class="text-center scale-150 hidden"><span class="loading loading-infinity loading-xl"></span></div>
                         <div id="plants_container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         </div>
                     </div>
-                    <div class="w-2/12">
+                    <div class="md:w-2/12">
                         <div class="bg-white rounded-xl p-5 ">
                             <h3 class="text-2xl font-bold">Your Cart</h3>
                             <!--  -->
