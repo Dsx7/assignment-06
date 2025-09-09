@@ -115,7 +115,7 @@ const showCart = (AllCart) => {
 
     AllCart.forEach(item => {
         // console.log(item)
-        total += Number(item.price)
+        total += Number(item.price * item.quantity)
         cartCointainter.innerHTML += `
         <div class="bg-green-100 p-3 rounded-lg">
                   <div class="flex justify-between items-center ">
